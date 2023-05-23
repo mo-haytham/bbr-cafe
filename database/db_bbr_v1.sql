@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 31, 2022 at 03:01 PM
+-- Generation Time: Feb 04, 2022 at 05:19 PM
 -- Server version: 5.7.23-23
 -- PHP Version: 7.3.32
 
@@ -237,6 +237,16 @@ CREATE TABLE `desserts_tags` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `desserts_tags`
+--
+
+INSERT INTO `desserts_tags` (`id`, `name_en`, `name_ar`, `status`, `created_by`, `created_at`) VALUES
+(1, 'Desserts', 'الحلويات', 1, 2, '2022-02-02 19:53:49'),
+(2, 'Crepes', 'الكريب', 1, 2, '2022-02-02 19:54:15'),
+(3, 'Chocolate', 'الشوكولاتة', 1, 2, '2022-02-02 19:55:08'),
+(4, 'Sweet & Fruity', 'الحلو و الفواكه', 1, 2, '2022-02-02 19:55:36');
+
 -- --------------------------------------------------------
 
 --
@@ -265,7 +275,54 @@ INSERT INTO `dessert_addon_pivot` (`dessert_id`, `desserts_addons_id`) VALUES
 (7, 4),
 (7, 5),
 (7, 6),
-(12, 1);
+(12, 1),
+(8, 1),
+(8, 2),
+(8, 3),
+(8, 4),
+(8, 5),
+(8, 6),
+(9, 1),
+(9, 2),
+(9, 3),
+(9, 4),
+(9, 5),
+(9, 6),
+(10, 1),
+(10, 2),
+(10, 3),
+(10, 4),
+(10, 5),
+(10, 6),
+(11, 1),
+(11, 2),
+(11, 3),
+(11, 4),
+(11, 5),
+(11, 6),
+(12, 2),
+(12, 3),
+(12, 4),
+(12, 5),
+(12, 6),
+(13, 1),
+(13, 2),
+(13, 3),
+(13, 4),
+(13, 5),
+(13, 6),
+(14, 1),
+(14, 2),
+(14, 3),
+(14, 4),
+(14, 5),
+(14, 6),
+(15, 1),
+(15, 2),
+(15, 3),
+(15, 4),
+(15, 5),
+(15, 6);
 
 -- --------------------------------------------------------
 
@@ -277,6 +334,41 @@ CREATE TABLE `dessert_tag_pivot` (
   `dessert_id` int(11) NOT NULL,
   `desserts_tags_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `dessert_tag_pivot`
+--
+
+INSERT INTO `dessert_tag_pivot` (`dessert_id`, `desserts_tags_id`) VALUES
+(6, 2),
+(6, 4),
+(7, 4),
+(8, 4),
+(7, 2),
+(8, 2),
+(9, 2),
+(9, 4),
+(10, 2),
+(10, 4),
+(11, 2),
+(11, 4),
+(12, 2),
+(12, 3),
+(13, 2),
+(13, 3),
+(14, 2),
+(14, 3),
+(15, 2),
+(15, 3),
+(15, 4),
+(1, 1),
+(1, 3),
+(2, 1),
+(3, 1),
+(3, 3),
+(4, 1),
+(5, 1),
+(5, 4);
 
 -- --------------------------------------------------------
 
@@ -401,7 +493,16 @@ CREATE TABLE `dishes_tags` (
 --
 
 INSERT INTO `dishes_tags` (`id`, `name_en`, `name_ar`, `status`, `created_by`, `created_at`) VALUES
-(1, 'Breakfast', 'الفطور', 1, 2, '2022-01-31 00:59:35');
+(1, 'Breakfast', 'الفطور', 1, 2, '2022-01-31 00:59:35'),
+(2, 'Soups', 'الشوربة', 1, 2, '2022-02-02 19:25:09'),
+(3, 'Starters', 'مقبالت', 1, 2, '2022-02-02 19:26:17'),
+(4, 'Sandwiches', 'الساندويتشات', 1, 2, '2022-02-02 19:26:44'),
+(5, 'Salads', 'السلطات', 1, 2, '2022-02-02 19:27:06'),
+(6, 'Pasta', 'المكرونة', 1, 2, '2022-02-02 19:27:32'),
+(7, 'Crepes', 'الكريب', 1, 2, '2022-02-02 19:28:03'),
+(8, 'Gluten Free', 'خالي من الجولتين', 1, 2, '2022-02-02 19:34:01'),
+(9, 'Vegetarian', 'نباتي', 1, 2, '2022-02-02 19:39:03'),
+(10, 'Brooklyn Savory Crepes', 'كريب بروكلين المالح', 1, 2, '2022-02-02 19:43:43');
 
 -- --------------------------------------------------------
 
@@ -488,7 +589,52 @@ INSERT INTO `dish_tag_pivot` (`dish_id`, `dishes_tags_id`) VALUES
 (1, 1),
 (2, 1),
 (3, 1),
-(4, 1);
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1),
+(9, 1),
+(10, 2),
+(11, 2),
+(12, 3),
+(13, 3),
+(14, 3),
+(14, 8),
+(15, 3),
+(16, 3),
+(17, 4),
+(18, 4),
+(19, 4),
+(20, 4),
+(22, 4),
+(23, 4),
+(24, 4),
+(25, 4),
+(26, 4),
+(26, 9),
+(27, 5),
+(28, 5),
+(29, 5),
+(30, 5),
+(30, 9),
+(31, 6),
+(32, 6),
+(33, 6),
+(34, 6),
+(35, 7),
+(35, 9),
+(36, 7),
+(37, 7),
+(37, 10),
+(38, 7),
+(38, 10),
+(39, 7),
+(39, 10),
+(40, 7),
+(40, 10),
+(41, 7),
+(41, 10);
 
 -- --------------------------------------------------------
 
@@ -549,7 +695,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_name`, `customer_phone`, `customer_address`, `order_type`, `order_body`, `country_iso_code`, `accepted_at`, `status`, `created_at`) VALUES
-(1, 'test', '012345678910', '', 'on', '                 <div class=\"container invoice\">                    <div class=\"row\">                        <div class=\"span4\"><div class=\"ilogo\"></div> <address> <strong>Brooklyn Bean Roastery</strong><br>Amazing Coffee From People Who Know Beans <br> 83b832a0-187b-41f5-9e7c-e2322c2f76f1</address></div>                        <div class=\"span4 well\"> <table class=\"invoice-head\"> <tbody>                                    <tr><td class=\"pull-right invoice_Currency\"><strong>Currency: </strong></td><td>EGP</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Name: </strong></td><td>test</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Phone: </strong></td><td>012345678910</td></tr>                                    <tr><td class=\"pull-right invoice_LocalDate\"><strong>Local Date #</strong></td><td>01/31/2022 at 03:26 AM GMT+2</td></tr>                                    <tr><td class=\"pull-right invoice_OrderType\"><strong>Order Type :</strong></td><td>on</td></tr>                                    <tr><td class=\"pull-right invoice_Address\"><strong>Address: </strong></td><td></td></tr>                        </tbody></table></div>                    </div>                    <div class=\"row\"><div class=\"span8\"> <h2>Receipt</h2></div></div>                    <div class=\"row\">                        <div class=\"span8 well invoice-body\"><table class=\"table table-bordered\">                                <thead><tr><th>Item</th><th>QTY</th> <th>Price</th><th>Total</th></tr></thead>                                <tbody>                                    <tr><td>#ORD-DI_1<br><b style=\"color:#e75b1e;\">spicy poblano omelette &nbsp </b> <i>74.99 EGP</i><br><br><b>Notes: </b></td><td>1</td><td>75.0</td><td>75</td></tr><tr><td>#ORD-DI_27<br><b style=\"color:#e75b1e;\">classic caeser &nbsp </b> <i>74.99 EGP</i><br><br><b>Notes: </b><b><i class=\"fa fa-plus\"></i>Add-ons</b><br><b style=\"color:#e75b1e;\">grilled chicken</b> <i>29.99 EGP</i><br><b style=\"color:#e75b1e;\">grilled shrimp</b> <i>49.99 EGP</i><br></td><td>1</td><td>155.0</td><td>155</td></tr>                                    <tr> <td colspan=\"4\"></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>SubTotal</strong></td><td><strong>230</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Tax</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Shipping</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Total</strong></td><td><strong>230</strong></td></tr>                                </tbody>                        </table></div>                    </div>                    <div class=\"row\"><div class=\"span8 well invoice-thank\"><h5 style=\"text-align:center;\">Thank You!</h5></div></div>                </div>', 'EGY', NULL, 1, '2022-01-31 01:26:44');
+(1, 'test', '012345678910', '', 'on', '                 <div class=\"container invoice\">                    <div class=\"row\">                        <div class=\"span4\"><div class=\"ilogo\"></div> <address> <strong>Brooklyn Bean Roastery</strong><br>Amazing Coffee From People Who Know Beans <br> 83b832a0-187b-41f5-9e7c-e2322c2f76f1</address></div>                        <div class=\"span4 well\"> <table class=\"invoice-head\"> <tbody>                                    <tr><td class=\"pull-right invoice_Currency\"><strong>Currency: </strong></td><td>EGP</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Name: </strong></td><td>test</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Phone: </strong></td><td>012345678910</td></tr>                                    <tr><td class=\"pull-right invoice_LocalDate\"><strong>Local Date #</strong></td><td>01/31/2022 at 03:26 AM GMT+2</td></tr>                                    <tr><td class=\"pull-right invoice_OrderType\"><strong>Order Type :</strong></td><td>on</td></tr>                                    <tr><td class=\"pull-right invoice_Address\"><strong>Address: </strong></td><td></td></tr>                        </tbody></table></div>                    </div>                    <div class=\"row\"><div class=\"span8\"> <h2>Receipt</h2></div></div>                    <div class=\"row\">                        <div class=\"span8 well invoice-body\"><table class=\"table table-bordered\">                                <thead><tr><th>Item</th><th>QTY</th> <th>Price</th><th>Total</th></tr></thead>                                <tbody>                                    <tr><td>#ORD-DI_1<br><b style=\"color:#e75b1e;\">spicy poblano omelette &nbsp </b> <i>74.99 EGP</i><br><br><b>Notes: </b></td><td>1</td><td>75.0</td><td>75</td></tr><tr><td>#ORD-DI_27<br><b style=\"color:#e75b1e;\">classic caeser &nbsp </b> <i>74.99 EGP</i><br><br><b>Notes: </b><b><i class=\"fa fa-plus\"></i>Add-ons</b><br><b style=\"color:#e75b1e;\">grilled chicken</b> <i>29.99 EGP</i><br><b style=\"color:#e75b1e;\">grilled shrimp</b> <i>49.99 EGP</i><br></td><td>1</td><td>155.0</td><td>155</td></tr>                                    <tr> <td colspan=\"4\"></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>SubTotal</strong></td><td><strong>230</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Tax</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Shipping</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Total</strong></td><td><strong>230</strong></td></tr>                                </tbody>                        </table></div>                    </div>                    <div class=\"row\"><div class=\"span8 well invoice-thank\"><h5 style=\"text-align:center;\">Thank You!</h5></div></div>                </div>', 'EGY', NULL, 1, '2022-01-31 01:26:44'),
+(2, 'test', '01234567891', '', 'on', '                 <div class=\"container invoice\">                    <div class=\"row\">                        <div class=\"span4\"><div class=\"ilogo\"></div> <address> <strong>Brooklyn Bean Roastery</strong><br>Amazing Coffee From People Who Know Beans <br> 606a32a0-735d-4b32-becf-3a26893b6a22</address></div>                        <div class=\"span4 well\"> <table class=\"invoice-head\"> <tbody>                                    <tr><td class=\"pull-right invoice_Currency\"><strong>Currency: </strong></td><td>EGP</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Name: </strong></td><td>test</td></tr>                                    <tr><td class=\"pull-right invoice_Name\"><strong>Customer Phone: </strong></td><td>01234567891</td></tr>                                    <tr><td class=\"pull-right invoice_LocalDate\"><strong>Local Date #</strong></td><td>02/02/2022 at 10:45 PM GMT+2</td></tr>                                    <tr><td class=\"pull-right invoice_OrderType\"><strong>Order Type :</strong></td><td>on</td></tr>                                    <tr><td class=\"pull-right invoice_Address\"><strong>Address: </strong></td><td></td></tr>                        </tbody></table></div>                    </div>                    <div class=\"row\"><div class=\"span8\"> <h2>Receipt</h2></div></div>                    <div class=\"row\">                        <div class=\"span8 well invoice-body\"><table class=\"table table-bordered\">                                <thead><tr><th>Item</th><th>QTY</th> <th>Price</th><th>Total</th></tr></thead>                                <tbody>                                    <tr><td>#ORD-DI_3<br><b style=\"color:#e75b1e;\">CHICKEN FAJITA OMELETTE &nbsp </b> <i>84.99 EGP</i><br><br><b>Notes: </b></td><td>1</td><td>85.0</td><td>85</td></tr><tr><td>#ORD-DE_6<br><b style=\"color:#e75b1e;\">Sugar and Lemon custard &nbsp </b> <i>74.99 EGP</i><br><br><b>Notes: </b><b><i class=\"fa fa-plus\"></i>Add-ons</b><br><b style=\"color:#e75b1e;\">Ice Cream</b> <i>19.99 EGP</i><br><b style=\"color:#e75b1e;\">Whipped cream</b> <i>9.99 EGP</i><br><b style=\"color:#e75b1e;\">Strawberries</b> <i>14.99 EGP</i><br><b style=\"color:#e75b1e;\">Bananas</b> <i>9.99 EGP</i><br><b style=\"color:#e75b1e;\">Apple</b> <i>14.99 EGP</i><br><b style=\"color:#e75b1e;\">Oreo</b> <i>14.99 EGP</i><br></td><td>1</td><td>159.9</td><td>159.9</td></tr>                                    <tr> <td colspan=\"4\"></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>SubTotal</strong></td><td><strong>244.9</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Tax</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Shipping</strong></td><td><strong>0</strong></td></tr>                                    <tr><td colspan=\"2\">&nbsp;</td><td><strong>Total</strong></td><td><strong>244.9</strong></td></tr>                                </tbody>                        </table></div>                    </div>                    <div class=\"row\"><div class=\"span8 well invoice-thank\"><h5 style=\"text-align:center;\">Thank You!</h5></div></div>                </div>', 'EGY', NULL, 0, '2022-02-02 20:45:17');
 
 -- --------------------------------------------------------
 
@@ -831,7 +978,7 @@ ALTER TABLE `desserts_addons`
 -- AUTO_INCREMENT for table `desserts_tags`
 --
 ALTER TABLE `desserts_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `dishes`
@@ -849,7 +996,7 @@ ALTER TABLE `dishes_addons`
 -- AUTO_INCREMENT for table `dishes_tags`
 --
 ALTER TABLE `dishes_tags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `drinks`
@@ -867,7 +1014,7 @@ ALTER TABLE `drinks_options`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `products`
